@@ -10,3 +10,9 @@
 * Using this application, you should be able to reduce the amount of frustration that you experience as a customer when making reservations at a restaurant
 * We are trying to sell this application to potential business partners so that they will use this for their workflow
 * Tailoring to your convenience, the cutting edge UI/UX design will blow you away!
+
+## The Developers
+
+### Proudly provided by:
+
+#### Nicholas Shipley, Nick Gluch, Peter Tan, Sable Hoover, Adam Newman
