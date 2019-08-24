@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container" style="background: black">
+        <div class="jumbotron" style="background-color: blanchedalmond">
+            <h1 class="text-center" style="font-style: italic" style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+                <i class="fa fa-fire"></i></span> Hot Restaurant</h1>
+            <hr>
+            <h2 class="text-center" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                Make Your Reservation</h2>
+            <br>
+            <div class="text-center">
+                <a href="tables.html"><button type="button" class="btn btn-lg btn-primary"
+                        style="background-color: blue"><span class="glyphicon glyphicon-cutlery"></span> View
+                        Tables</button></a>
+                <a href="reserve.html"><button type="button" class="btn btn-lg btn-danger"
+                        style="background-color: maroon"><span class="glyphicon glyphicon-book"></span> Make
+                        Reservation</button></a>
+                <a href="home.html"><button type="button" class="btn btn-lg btn-primary"
+                        style="background-color:gold"><span class="glyphicon glyphicon-home"></span> Home</button></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Table Reservation</h4>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="reserve-name">Your Name</label>
+                                <input type="text" class="form-control" id="reserve-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="reserve-phone">Phone Number</label>
+                                <input type="text" class="form-control" id="reserve-phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="reserve-email">Your Email</label>
+                                <input type="text" class="form-control" id="reserve-email">
+                            </div>
+                            <div class="form-group">
+                                <label for="reserve-unique-id">Personal ID</label>
+                                <input type="text" class="form-control" id="reserve-unique-id">
+                            </div>
+                            <button type="submit" class="btn btn-primary submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> |
+            </div>
+        </footer>
+    </div>
+</body>
+
+<script src="server.js">
+    $("#submitBtn").on("click", function () {
+        var resName = $("#reserve-name").val().trim();
+        var resPhone = $("#reserve-phone").val().trim();
+        var resEmail = $("#reserve-email").val().trim();
+        var resID = $("#reserve-unique-id").val().trim();
+        app.post("/api/tables", function (req, res) {
+            var newRes = {
+                customerName: resName,
+                customerPhone: resPhone,
+                email: resEmail,
+                customerID: resID
+            };
+            console.log(newRes);
+            tableReservations.push(newRes);
+            res.json(newRes);
+        });
+    });
+</script>
+
+</html>

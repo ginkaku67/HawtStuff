@@ -1,0 +1,24 @@
+{
+  "name": "hawtstuff",
+  "version": "1.0.0",
+  "description": "A reservation application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ginkaku67/HawtStuff.git"
+  },
+  "author": "Nicholas Shipley, Nick Gluch, Peter Tan, Sable Hoover, Adam Newman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ginkaku67/HawtStuff/issues"
+  },
+  "homepage": "https://github.com/ginkaku67/HawtStuff#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}
